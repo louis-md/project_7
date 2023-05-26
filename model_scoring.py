@@ -1,6 +1,5 @@
 from sklearn.metrics import (
-    accuracy_score, precision_score, recall_score,
-    precision_recall_curve, roc_curve, roc_auc_score
+    accuracy_score, precision_score, recall_score, roc_curve, roc_auc_score
 )
 
 import pprint
@@ -15,8 +14,7 @@ def scoring(train, pred):
         pprint.pprint(f'The ROC AUC score of the model is: {roc_auc_score(train, pred)} ')
 
         fp, tp, _ = roc_curve(train, pred)
-        fig = plt.plot(fp, tp)
+        plt.plot(fp, tp)
         plt.xlabel('False positives')
-        plt.ylabel('True positives')
-        fig.show();
+        plt.ylabel('True positives');
 
